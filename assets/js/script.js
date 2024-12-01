@@ -221,29 +221,6 @@ document.addEventListener("scroll", () => {
 
 backToTopButton.addEventListener("click", goToTop);
 
-// Cookie
-const cookieWrb = document.querySelector(".cookie"),
-btnAction = cookieWrb.querySelector(".btn-actions button");
-
-if(window.location.host) {
-    btnAction.onclick = () => {
-        // set cookie for 1 month and after that time expire automatically
-        document.cookie = "OraKs=com; max-age=" + 60 * 60 * 24 * 30;
-        if(document.cookie) {
-            setTimeout(() => {
-                cookieWrb.classList.add("hide");
-            }, 500);
-        } else {
-            alert("Cookie can't be set!");
-        }
-    }
-    
-    let checkforCookie = document.cookie.indexOf("OraKs=com");
-    checkforCookie != -1 ? cookieWrb.classList.add("hide") : cookieWrb.classList.remove("hide");
-} else {
-    cookieWrb.classList.add("hide");
-}
-
 function mostrarAlerta() {
     alert("Mensagem enviada");
 }
